@@ -1,22 +1,23 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-function getPriceBySymbol(userSymbol) {
-    const BASE_URL = 'http://localhost:5173/';
-    const END_POINT = '/photo';
-    const PARAMS = `?symbol=${userSymbol}`;
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.search-form');
+    const input = document.querySelector('.input-search');
+    const gallery = document.getElementById('gallery');
+});
 
-    const url = BASE_URL + END_POINT + PARAMS;
+function getGallery() {
+    const BASE_URL = 'https://pixabay.com/api/';
+    const API_KEY = '42296578-21d0e9ca438ad812aa67579cd';
+
+    const url = BASE_URL + END_POINT;
 
     const options = {
         q: 'photos',
         image_type: photo,
         orientation: horizontal,
         safesearch: true,
-        headers: {
-        'X-RapidAPI-Key': '42296578-21d0e9ca438ad812aa67579cd',
-        'X-RapidAPI-Host': 'http://localhost:5173/',
-        },
     };
 
     return fetch(url, options).then(res => {
