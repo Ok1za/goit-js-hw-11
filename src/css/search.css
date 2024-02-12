@@ -1,9 +1,12 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .search-form {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 36px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .input-search {
@@ -16,6 +19,7 @@
   color: #2e2f42;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .input-search:active,
@@ -36,4 +40,47 @@
 
 .search-btn:hover {
   background-color: #5e81ff;
+}
+
+.loader {
+  text-align: center;
+  padding-top: 32px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+
+.gallery {
+  flex-shrink: 0;
+  border: 1px solid #808080;
+  margin: 15px;
+}
+
+.gallery-o {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-transform: capitalize;
+  gap: 4px;
+}
+
+.info-cards-elements {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #2e2f42;
 }
