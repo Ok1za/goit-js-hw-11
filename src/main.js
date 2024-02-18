@@ -5,34 +5,32 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     const formElem = document.querySelector('.search-form');
-    const galleryEl = document.querySelector('.gallery-o');
+    const galleryEl = document.querySelector('#gallery-o');
     const loaderElem = document.querySelector('.loader');
 
     hideLoader();
 
-    const lightbox = new SimpleLightbox('.gallery a', {
+    const lightbox = new SimpleLightbox('.gallery-o a', {
     captionDelay: 250,
     });
 
     formElem.addEventListener('submit', onSubmit);
 
     function onSubmit(e) {
-    e.preventDefault();
-    showLoader();
+        e.preventDefault();
+        showLoader();
 
-    const value = formElem.querySelector('.input-search').value;
-    getPhotoBySearch(value)
-        .then(data => {
-        renderImages(data.hits);
-        })
-        .catch(error => {
-        renderError(error);
-        })
-        .finally(() => {
-        hideLoader();
-        });
-
-    formElem.reset();
+        const value = formElem.querySelector('.input-search').value;
+        getPhotoBySearch(value)
+            .then(data => {
+                renderImages(data.hits);
+            })
+            .catch(error => {
+                renderError(error);
+            })
+            .finally(() => {
+                hideLoader();
+            });
     }
 
     function getPhotoBySearch(searchValue) {
@@ -40,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const KEY = '42296578-21d0e9ca438ad812aa67579cd';
     const Query = `?key=${KEY}&q=${searchValue}`;
     const params =
-        '&image_type=photo&orientation=horizontal&safesearch=true&per_page=20';
+        '&image_type=photo&orientation=horizontal&safesearch=true';
     const url = BASE_URL + Query + params;
 
     return fetch(url)
@@ -68,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return `
         <div class="gallery">
             <a href="${largeImageURL}">
-            <img src="${webformatURL}" alt="${tags}" title="${tags}" width="360" height="300" />
+            <img src="${webformatURL}" alt="${tags}" title="${tags}" width="380" height="220" />
             <ul class="info-cards-container">
                 <li class="info-cards-elements">likes<span>${likes}</span></li>
                 <li class="info-cards-elements">views<span>${views}</span></li>

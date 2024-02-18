@@ -1,3 +1,12 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  padding: 0;
+}
+
 .container {
   font-family: 'Montserrat', sans-serif;
 }
@@ -52,7 +61,6 @@
 }
 
 .gallery {
-  flex-shrink: 0;
   border: 1px solid #808080;
   margin: 15px;
 }
@@ -60,7 +68,6 @@
 .gallery-o {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
   justify-content: center;
 }
 
@@ -78,9 +85,13 @@ li {
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.04em;
-  text-align: left;
+  color: #2e2f42;
+}
+.info-cards-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  color: #2e2f42;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 0;
 }
